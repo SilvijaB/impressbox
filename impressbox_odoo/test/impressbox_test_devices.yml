@@ -1,0 +1,58 @@
+-
+   Create an ImpressBox device 1
+-
+  !record {model: main.impressbox, id: main_impressbox_device1, view: False}:
+    identifier: i1111
+    pin_code: 1111
+    user_id: 1
+-
+   Create an ImpressBox device 2
+-
+  !record {model: main.impressbox, id: main_impressbox_device2, view: False}:
+    identifier: i2222
+    pin_code: 2222
+    user_id: 1
+-
+   Create an ImpressBox device 3
+-
+  !record {model: main.impressbox, id: main_impressbox_device3, view: False}:
+    identifier: i3333
+    pin_code: 3333
+    user_id: 1
+-
+   Create an ImpressBox device 4
+-
+  !record {model: main.impressbox, id: main_impressbox_device4, view: False}:
+    identifier: i4444
+    pin_code: 4444
+    user_id: 2
+-
+   Create an ImpressBox device 5
+-
+  !record {model: main.impressbox, id: main_impressbox_device5, view: False}:
+    identifier: i5555
+    pin_code: 5555
+    user_id: 2
+-
+   Create an ImpressBox device 6
+-
+  !record {model: main.impressbox, id: main_impressbox_device6, view: False}:
+    identifier: i6666
+    pin_code: 6666
+    user_id: 2
+-
+  Test with ImpressBox User.
+-
+  !context
+    uid: 'res_users_impressbox_user'
+-
+  ImpressBox User sets Payment Plans. 
+- 
+  !python {model: main.impressbox}: | 
+    self.write(cr, uid, [ref('main_impressbox_device1')], {'payment_plan': 'payment.plan.standard,%d' % ref('payment_plan_standard1')}, context=context) 
+    self.write(cr, uid, [ref('main_impressbox_device2')], {'payment_plan': 'payment.plan.standard,%d' % ref('payment_plan_standard2')}, context=context) 
+    self.write(cr, uid, [ref('main_impressbox_device3')], {'payment_plan': 'payment.plan.standard,%d' % ref('payment_plan_standard3')}, context=context) 
+    self.write(cr, uid, [ref('main_impressbox_device4')], {'payment_plan': 'payment.plan.data,%d' % ref('payment_plan_data1')}, context=context) 
+    self.write(cr, uid, [ref('main_impressbox_device5')], {'payment_plan': 'payment.plan.data,%d' % ref('payment_plan_data2')}, context=context) 
+    self.write(cr, uid, [ref('main_impressbox_device6')], {'payment_plan': 'payment.plan.data,%d' % ref('payment_plan_data3')}, context=context) 
+- 

@@ -1,0 +1,8 @@
+-
+  ImpressBox User creates ImpressBox Billing
+-
+  !python {model: res.partner}: |
+    period_id = self.pool.get('account.period').search(cr, uid, [('date_start','=','2014-10-01')])[0]
+    wizard_id = self.pool.get('impressbox.billing').create(cr, uid, {'period_id': period_id})
+    self.pool.get('impressbox.billing').create_billing(cr, uid, wizard_id)
+-

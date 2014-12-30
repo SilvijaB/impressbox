@@ -1,0 +1,37 @@
+-
+   Create a user as 'ImpressBox User'
+-
+  !record {model: res.users, id: res_users_impressbox_user, view: False}:
+    company_id: base.main_company
+    name: ImpressBox User
+    login: ibox
+    password: ibox
+    email: ibox@yourcompany.com
+-
+  I added groups for ImpressBox User.
+-
+  !record {model: res.users, id: res_users_impressbox_user}:
+    groups_id:
+      - impressbox_odoo.group_impressbox_user
+      - base.group_sale_manager
+-
+   Create a user as 'ImpressBox Client 1'
+-
+  !record {model: res.users, id: res_users_impressbox_client1, view: False}:
+    company_id: base.main_company
+    name: ImpressBox Client1
+    login: iboxclient1
+    password: iboxclient1
+    email: iboxclient1@yourcompany.com
+    oauth_uid: 1
+-
+   Create a user as 'ImpressBox Client 2'
+-
+  !record {model: res.users, id: res_users_impressbox_client2, view: False}:
+    company_id: base.main_company
+    name: ImpressBox Client2
+    login: iboxclient2
+    password: iboxclient2
+    email: iboxclient2@yourcompany.com
+    oauth_uid: 2
+-

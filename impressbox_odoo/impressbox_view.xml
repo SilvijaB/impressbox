@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<openerp>
+    <data>
+
+        <menuitem id="menu_main_impressbox" name="ImpressBox" sequence="91"/>
+
+        <record model="ir.ui.view" id="crm_lead_inherit_impress_box">
+            <field name="name">crm.lead.inherit.impress.box</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Impress Box details">
+                        <group>
+                            <group>
+                                <field name="industry"/>
+                                <field name="service_type"/>
+                            </group>
+                            <group>
+                                <field name="nbr_subdivision"/>
+                                <field name="nbr_screen"/>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="opportunity_inherit_impress_box">
+            <field name="name">opportunity.inherit.impress.box</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Impress Box details">
+                        <group>
+                            <group>
+                                <field name="industry"/>
+                                <field name="service_type"/>
+                            </group>
+                            <group>
+                                <field name="nbr_subdivision"/>
+                                <field name="nbr_screen"/>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="payment_plan_standard_form_view">
+            <field name="name">payment.plan.standard.form.view</field>
+            <field name="model">payment.plan.standard</field>
+            <field name="arch" type="xml">
+                <form string="Standard Payment Plan">
+                    <group name='main_group'>
+                        <group>
+                            <field name="payment_plan_name"/>
+                        </group>
+                        <group>
+                            <field name="product_id"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="payment_plan_standard_tree_view">
+            <field name="name">payment.plan.standard.tree.view</field>
+            <field name="model">payment.plan.standard</field>
+            <field name="arch" type="xml">
+                <tree string="Standard Payment Plans">
+                    <field name="payment_plan_name"/>
+                    <field name="product_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_payment_plan_standard_tree" model="ir.actions.act_window">
+            <field name="name">Standard Payment Plans</field>
+            <field name="res_model">payment.plan.standard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="payment_plan_standard_tree_view"/>
+            <field name="context">{}</field>
+            <!--<field name="search_view_id" ref="view_account_invoice_filter"/>-->
+        </record>
+
+
+        <menuitem id="menu_payment_plans" name="Payment Plans" parent="menu_main_impressbox" sequence="1"/>
+        <menuitem action="action_payment_plan_standard_tree" id="menu_action_payment_plan_standard_tree" parent="menu_payment_plans" sequence="0"/>
+
+
+        <record model="ir.ui.view" id="payment_plan_data_form_view">
+            <field name="name">payment.plan.data.form.view</field>
+            <field name="model">payment.plan.data</field>
+            <field name="arch" type="xml">
+                <form string="Data Payment Plan">
+                    <group name='main_group'>
+                        <group>
+                            <field name="payment_plan_name"/>
+                        </group>
+                        <group>
+                            <field name="product_id"/>
+                            <field name="data_product_id"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="payment_plan_data_tree_view">
+            <field name="name">payment.plan.data.tree.view</field>
+            <field name="model">payment.plan.data</field>
+            <field name="arch" type="xml">
+                <tree string="Data Payment Plans">
+                    <field name="payment_plan_name"/>
+                    <field name="product_id"/>
+                    <field name="data_product_id"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_payment_plan_data_tree" model="ir.actions.act_window">
+            <field name="name">Data Payment Plans</field>
+            <field name="res_model">payment.plan.data</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="payment_plan_data_tree_view"/>
+            <field name="context">{}</field>
+            <!--<field name="search_view_id" ref="view_account_invoice_filter"/>-->
+        </record>
+
+
+        <menuitem action="action_payment_plan_data_tree" id="menu_action_payment_plan_data_tree" parent="menu_payment_plans" sequence="1"/>
+
+
+        <record model="ir.ui.view" id="main_impressbox_form_view">
+            <field name="name">main.impressbox.form.view</field>
+            <field name="model">main.impressbox</field>
+            <field name="arch" type="xml">
+                <form string="ImpressBox">
+                    <group name='main_group'>
+                        <group>
+                            <field name="identifier"/>
+                            <field name="user_id"/>
+                        </group>
+                        <group>
+                            <field name="pin_code"/>
+                            <field name="payment_plan"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="main_impressbox_tree_view">
+            <field name="name">main.impressbox.tree.view</field>
+            <field name="model">main.impressbox</field>
+            <field name="arch" type="xml">
+                <tree string="ImpressBox">
+                    <field name="identifier"/>
+                    <field name="pin_code"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_main_impressbox_tree" model="ir.actions.act_window">
+            <field name="name">ImpressBox</field>
+            <field name="res_model">main.impressbox</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="main_impressbox_tree_view"/>
+            <field name="context">{}</field>
+            <!--<field name="search_view_id" ref="view_account_invoice_filter"/>-->
+        </record>
+
+
+        <menuitem id="menu_impressbox" name="ImpressBox" parent="menu_main_impressbox" sequence="0"/>
+        <menuitem action="action_main_impressbox_tree" id="menu_action_main_impressbox_tree" parent="menu_impressbox" sequence="0"/>
+
+
+        <record model="ir.ui.view" id="impressbox_activity_form_view">
+            <field name="name">impressbox.activity.form.view</field>
+            <field name="model">impressbox.activity</field>
+            <field name="arch" type="xml">
+                <form string="ImpressBox Activity">
+                    <group name='main_group'>
+                        <group>
+                            <field name="device_id"/>
+                        </group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_stop"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="impressbox_activity_tree_view">
+            <field name="name">impressbox.activity.tree.view</field>
+            <field name="model">impressbox.activity</field>
+            <field name="arch" type="xml">
+                <tree string="ImpressBox Activities">
+                    <field name="device_id"/>
+                    <field name="date_start"/>
+                    <field name="date_stop"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_impressbox_activity_tree" model="ir.actions.act_window">
+            <field name="name">ImpressBox Activities</field>
+            <field name="res_model">impressbox.activity</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="impressbox_activity_tree_view"/>
+            <field name="context">{}</field>
+            <!--<field name="search_view_id" ref="view_account_invoice_filter"/>-->
+        </record>
+
+        <menuitem action="action_impressbox_activity_tree" id="menu_action_impressbox_activity_tree" parent="menu_impressbox" sequence="1"/>
+
+
+        <record model="ir.ui.view" id="res_partner_inherit_payment_plan">
+            <field name="name">res.partner.inherit.payment.plan</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="email" position="replace">
+                    <field name="email" required="1" help="Set valid email (etc. test@test.com)"/> 
+                </field>
+                <notebook position="inside">
+                    <page string="ImpressBox">
+                        <group>
+                            <group>
+                                <field name="default_payment_plan"/>
+                                <field name="secret" groups="base.group_system"/>
+                                <field name="impressbox_host_id" selection="1" attrs="{'required':[('is_company','=',True)]}"/>
+                            </group>
+                            <group>
+                                <field name="billing_periods" mode="tree">
+                                    <tree>
+                                        <field name="period_id"/>
+                                        <field name="invoice_id"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <template id="auth_signup.secret_field" inherit_id="auth_signup.fields" name="Auth Signup/ResetPassword form fields">
+            <xpath expr="//div[@class='form-group field-name']" position="after">
+                <div class="form-group field-secret">
+                    <label for="secret" class="control-label">Secret Code</label>
+                    <input type="text" name="secret" t-att-value="secret" id="secret" class="form-control"
+                        t-att-readonly="'readonly' if only_passwords else None"
+                        t-att-autofocus="'autofocus' if login and not only_passwords else None" />
+                </div>
+            </xpath>
+        </template>
+
+        <record model="ir.ui.view" id="base_settings_inherit_impressbox_secret">
+            <field name="name">base.settings.inherit.impressbox.secret</field>
+            <field name="model">base.config.settings</field>
+            <field name="inherit_id" ref="base_setup.view_general_configuration"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form" position="inside">
+                    <group name="impressbox_secret">
+                        <label for="id" string="ImpressBox"/>
+                        <div>
+                            <div>
+                                <label for="impressbox_secret"/>
+                                <field name="impressbox_secret" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

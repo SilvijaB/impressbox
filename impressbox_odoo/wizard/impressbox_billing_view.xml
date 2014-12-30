@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_impressbox_billing_create" model="ir.ui.view">
+            <field name="name">Create ImpressBox Billing</field>
+            <field name="model">impressbox.billing</field>
+            <field name="arch" type="xml">
+                <form string="Create ImpressBox Billing">
+                    <label string="Are you sure you want to create ImpressBox billing?" invisible="context.get('active_id',False)"/>
+                    <group>
+                        <group>
+                            <field name="period_id" on_change="onchange_period(period_id)"/>
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="create_billing" string="Yes" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_impressbox_billing_create" model="ir.actions.act_window">
+            <field name="name">Create ImpressBox Billing</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">impressbox.billing</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_impressbox_billing_create"/>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="menu_impressbox_billing" name="Billing" parent="menu_main_impressbox" sequence="2"/>
+        <menuitem action="action_impressbox_billing_create" id="menu_action_impressbox_billing_create" parent="menu_impressbox_billing" sequence="0"/>
+
+    </data>
+</openerp>

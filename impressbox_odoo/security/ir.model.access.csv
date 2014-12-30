@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_main_impressbox_impressbox_user,main.impressbox.impressbox.user,model_main_impressbox,group_impressbox_user,1,1,0,0
+access_payment_plan_impressbox_user,payment.plan.impressbox.user,model_payment_plan,group_impressbox_user,1,1,1,1
+access_payment_plan_standard_impressbox_user,payment.plan.standard.impressbox.user,model_payment_plan_standard,group_impressbox_user,1,1,1,1
+access_payment_plan_data_impressbox_user,payment.plan.data.impressbox.user,model_payment_plan_data,group_impressbox_user,1,1,1,1
+access_impressbox_activity_impressbox_user,impressbox.activity.impressbox.user,model_impressbox_activity,group_impressbox_user,1,1,1,0
+access_crm_case_industry_salesman,crm.case.industry.salesman,model_crm_case_industry,base.group_sale_salesman,1,0,0,0
+access_crm_case_industry_manager,crm.case.industry.manager,model_crm_case_industry,base.group_sale_manager,1,1,1,1

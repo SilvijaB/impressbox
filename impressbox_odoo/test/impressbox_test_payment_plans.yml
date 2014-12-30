@@ -1,0 +1,45 @@
+-
+  Test with ImpressBox User.
+-
+  !context
+    uid: 'res_users_impressbox_user'
+-
+  Create Standard Payment Plan 1
+-
+  !record {model: payment.plan.standard, id: payment_plan_standard1, view: False}:
+    payment_plan_name: Standard Payment Plan 1
+    product_id: standard_impressbox_product1
+-
+  Create Standard Payment Plan 2
+-
+  !record {model: payment.plan.standard, id: payment_plan_standard2, view: False}:
+    payment_plan_name: Standard Payment Plan 2
+    product_id: standard_impressbox_product2
+-
+  Create Standard Payment Plan 3
+-
+  !record {model: payment.plan.standard, id: payment_plan_standard3, view: False}:
+    payment_plan_name: Standard Payment Plan 3
+    product_id: standard_impressbox_product3
+-
+  Create Data Payment Plan 1
+-
+  !record {model: payment.plan.data, id: payment_plan_data1, view: False}:
+    payment_plan_name: Data Payment Plan 1
+    product_id: standard_impressbox_product1
+    data_product_id: data_impressbox_product1
+-
+  Create Data Payment Plan 2
+-
+  !record {model: payment.plan.data, id: payment_plan_data2, view: False}:
+    payment_plan_name: Data Payment Plan 2
+    product_id: standard_impressbox_product2
+    data_product_id: data_impressbox_product2
+-
+  Create Data Payment Plan 3
+-
+  !record {model: payment.plan.data, id: payment_plan_data3, view: False}:
+    payment_plan_name: Data Payment Plan 3
+    product_id: standard_impressbox_product3
+    data_product_id: data_impressbox_product3
+-

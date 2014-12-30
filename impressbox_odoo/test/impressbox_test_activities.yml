@@ -1,0 +1,45 @@
+-
+  Create ImpressBox Activity 1 for Device 1
+-
+  !record {model: impressbox.activity, id: impressbox_activity1, view: False}:
+    device_id: main_impressbox_device1
+    date_start: "2014-10-01 00:00:00"
+    date_stop: "2014-10-10 00:00:00"
+-
+  Create ImpressBox Activity 2 for Device 1
+-
+  !record {model: impressbox.activity, id: impressbox_activity2, view: False}:
+    device_id: main_impressbox_device1
+    date_start: "2014-10-21 00:00:00"
+    date_stop: "2014-10-30 00:00:00"
+-
+  Create ImpressBox Activity 3 for Device 2
+-
+  !record {model: impressbox.activity, id: impressbox_activity3, view: False}:
+    device_id: main_impressbox_device2
+    date_start: "2014-01-01 00:00:00"
+-
+  Create ImpressBox Activity 4 for Device 3
+-
+  !record {model: impressbox.activity, id: impressbox_activity4, view: False}:
+    device_id: main_impressbox_device3
+    date_start: "2014-10-01 00:00:00"
+-
+  Create ImpressBox Activity 5 for Device 4
+-
+  !record {model: impressbox.activity, id: impressbox_activity5, view: False}:
+    device_id: main_impressbox_device4
+    date_start: "2015-10-01 00:00:00"
+-
+  Create ImpressBox Activity 6 for Device 5
+-
+  !record {model: impressbox.activity, id: impressbox_activity6, view: False}:
+    device_id: main_impressbox_device5
+    date_start: "2014-10-01 00:00:00"
+-
+  Create ImpressBox Activity 7 for Device 6
+-
+  !record {model: impressbox.activity, id: impressbox_activity7, view: False}:
+    device_id: main_impressbox_device6
+    date_start: "2014-10-01 00:00:00"
+-
